@@ -2,8 +2,9 @@ Radiology Viewer
 ================
 Radiology images are viewed in an open source viewer from the `Open Health Imaging Foundation`_. The ISB_CGC web application uses an instance of the `dcm4chee`_ open source image manager/image server to manage radiology files for the purpose of viewing. Currently only radiology image files from TCGA samples are available for viewing. It may be helpful to review the `DICOM Model of the Real World <http://dicom.nema.org/medical/dicom/current/output/html/part03.html#chapter_7>`_ to understand the relationship between patients DICOM studies, DICOM series and DICOM instances.
 
+.. _Open Health Imaging Foundation: http://ohif.org/
 .. _dcm4chee: https://www.dcm4che.org/
-.. _Open Health Imageing Foundation: http://ohif.org/
+
 
 The ISB-CGC web application `File Browser page`_ presents a table of DICOM studies associated with patients in some cohort.
 
