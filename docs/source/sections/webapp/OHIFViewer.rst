@@ -6,7 +6,7 @@ Radiology images are viewed in an open source viewer from the `Open Health Imagi
 .. _dcm4chee: https://www.dcm4che.org/
 
 
-The ISB-CGC web application `File Browser page`_ presents a table of DICOM studies associated with patients in some cohort.
+The **Radiology Images** tab of the ISB-CGC web application `File Browser page`_ presents a table of DICOM studies associated with patients in some cohort.
 
 .. _File Browser page: https://isb-cancer-genomics-cloud.readthedocs.io/en/latest/sections/webapp/Saved-Cohorts.html#view-file-browser-page
 
