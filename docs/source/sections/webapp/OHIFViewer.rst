@@ -33,18 +33,19 @@ Each thumbnail image in the Series Selection Panel represents a series in the st
 By default, the Viewport displays the first series in the Series Selection Panel. To view a different series, drag its thumbnail into the viewport. The first instance ("slice") of the series is immediately displayed, and the remaining instances are loaded into the viewer. Instance loading progress is indicated by the blue line at the bottom of the corresponding thumbnail. Note that instance loading performance depends on your internet performance.
 
 As instance are loaded, you can scroll through the instances using your mouse's thumbwheel or equvalent. As you scroll, the slider on the right side of the viewport indicates the the instance currently being displayed. You can also navigate through the series by "grabbing" the slider with your mouse, or by clicking within the slider area. 
-Viewing Functions
-_________________
 
-A set of buttons above the viewport provides a range of functions. 
 
-.. image:: OsimisViewportButtons.png
+A set of buttons above the viewport provides a range of viewing functions. 
+
+.. image:: OHIFViewingFunctions.png
   :align: center
 
+Viewing Functions
+_________________
 The **Layout** button |layout| controls subdividing the viewport for the simultaneous display of one, two or four series. Drag a series into any of the subviewports to display it. Clicking in a subviewport gives it focus for mousewheel and cursor drag operations.
 
-.. |layout| image:: OsimisLayout.png
-.. image:: OsimisMultiVP.png
+.. |layout| image:: OHIFLayout.png
+.. image:: OHIFMultiVP.png
 
 Of the remaining buttons, some are modal, changing the effect of the cursor drag function. A blue line underscores the currently selected mode. Other buttons immediately perform some operation on the subviewport that has focus.
 
