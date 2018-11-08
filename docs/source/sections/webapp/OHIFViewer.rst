@@ -80,45 +80,60 @@ The **Layout** button |layout| controls subdividing the viewport for the simulta
 .. |layout| image:: OHIFLayout.png
 .. image:: OHIFMultiVP.png
 
-When multiple series are displayed, and as you scroll through a series in one subviewport, lines in other subviewports of series are drawn to show the corresponding location.
+When multiple series are displayed, and as you scroll through a series in one subviewport, lines in other subviewports move to show the corresponding location.
 
-Of the remaining buttons, some are modal, changing the effect of the cursor drag function. A blue line underscores the currently selected mode. Other buttons immediately perform some operation on the subviewport that has focus.
+Of the remaining buttons, some are modal, changing the effect of the cursor drag operation (holding the mouse button down while moving the cursor). The color of the currently selected modal function's icon changes to indicate it has been selected. Other buttons immediately perform some operation on the subviewport that has focus.
+
+* The **Stack Scroll** button |scroll| is modal. When selected, cursor dragging the cursor up or down with mouse button depressed scrolls through the images in the (sub)viewport having focus, similar to using your mouse's scroll wheel.
+
+.. |scroll| image:: OHIFScrollStack.png
+* The **Zoom** button |zoom| is modal. When selected, dragging the cursor with mouse button depressed expands or contracts the series in the (sub)viewport having focus. Expansion/contraction is around the cursor position at which dragging begins.
+
+.. |zoom| image:: OHIFZoom.png
+* The **Levels** button |presets| is modal. When selected, dragging the cursor with mouse button depressed right or left decreases or increases the current Window Width. Dragging the cursor with mouse button depressed up or down increases or decreases the current Window Center. The Window Width and Window Center value pair specify a linear conversion from stored pixel values to displayed pixel values. See here_ for further information on Window Center and Window Width. DICOM instances generally include WW,WC value pairs and these are used by default.
+
+.. _here: http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.11.2.1.2
+
+.. |presets| image:: OHIFLevels.png
+* The **Pan** button |pan| is modal. When selected, dragging the cursor with mouse button depressed causes panning of the series in the (sub)viewport having focus. 
+
+.. |pan| image:: OHIFPan.png
+* The **Length** button |len| is modal. When selected, the distance in physical units between two points in the current instance can be measured. To perform a measurement, click the mouse button once with the cursor over some point of interest, and then again over a second point of interest. Alternatively, depress and hold the mouse button while the cursor is over the first point of interest, then release the mouse button while the cursor is over the second point of interest. A line joining the two points and its length are displayed. The line will scale if the series is zoomed in or out. 
+
+  A length measurement can be moved, while in any mode, by clicking on and dragging it. You can also "grab" a line endpoint and drag it to a different location.
+  
+  To remove a length measurement, drag it or an endpoint outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the measure outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the measure outside of the extent of the instance. 
+ 
+  A length measurement is only visible on the instance on which it was made. There is currently no support for saving length measurements.
+
+.. |len| image:: OHIFLength.png
+* The **Annotate** button |anno| is modal. When selected, a point in the current instance can be measured. To perform an annotation, click the mouse button once with the cursor over some point of interest, and then again over a second location. Alternatively, depress and hold the mouse button while the cursor is over the first point of interest, then release the mouse button while the cursor is over a second location. An arrow joining the two points and with its head at the point of interest is displayed, and a pop-up window appears into which some text annotation can be entered. The arrow will scale if the series is zoomed in or out. 
+
+  An annotation can be moved, while in any mode, by clicking on and dragging it. You can also "grab" an annotation endpoint and drag it to a different location.
+  
+  To remove an annotation, drag it or an endpoint outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the annotation outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the annotation outside of the extent of the instance. 
+ 
+  An annotation is only visible on the instance on which it was made. There is currently no support for saving annotations.
+
+.. |len| image:: OHIFAnnotate.png
+.. |pan| image:: OHIFPan.png
+* The **Angle** button |ang| is modal. When selected, the angle between features in an instance can be measured. To perform a measurement, click on a three points of interest in an instance. A pair of lines are displayed from the first to the send point and from the second point to the third. The magnitude, in degrees, of the angle between the two lines also displayed.
+  
+  An angle measurement can be moved by clicking on one of the lines and dragging it while holding down the mouse button. Any of the end points of the measure can also be moved.
+  
+  To remove an angle measurement, drag it or an endpoint outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the measure outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the measure outside of the extent of the instance.
+  
+  An angle measurement is only visible on the instance on which it was made. There is currently no support for saving angle measurements.  
+
+.. |ang| image:: OHIFAngle.png
+* The **Reset** button |reset| immediately resets the zoom, window width and window center of the (sub)viewport having focus to default values.
 
 * The **Invert Color** button |invert| immediately inverts the colors of the series in the (sub)viewport having focus.
 
 .. |invert| image:: OsimisInvertColor.png
-* The **Zoom** button |zoom| is modal. When selected, dragging the cursor with mouse button depressed expands or contracts the series in the (sub)viewport having focus. Expansion/contraction is around the cursor position at which dragging begins.
-
-.. |zoom| image:: OsimisZoom.png
-* The **Pan** button |pan| is modal. When selected, dragging the cursor with mouse button depressed causes panning of the series in the (sub)viewport having focus. 
-
-.. |pan| image:: OsimisPanning.png
-* The **Windowing Presets** button |presets| operates both modally and immediately. Hovering the cursor over the button displays a list of windowing presets, one of which can be selected by clicking on it. The selection immediately sets Window Width (WW) and Window Center (WC) values for the series in the (sub)viewport having focus. The WW,WC value pair specifies a linear conversion from stored pixel values to values to be displayed. See here_ for further information on Window Center and Window Width.
-
-  DICOM instances generally include WW,WC value pairs and these are used by default. Other WW,WC value pairs that may be appropriate for specific cases can be selected on the pop-up. The *Preset #1* selection restores WW,WC to the DICOM setting.
-  
-  The Windowing Presets button operates modally when clicked. In this mode, dragging the cursor left or right in a (sub)viewport changes the Window Width value applied to the series in that (sub)viewport. Dragging the cursor up or down in a (sub)viewport changes the Window Center value applied to the series in that (sub)viewport.
-
-.. _here: http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.11.2.1.2
-
-.. |presets| image:: OsimisPresets.png
 * The **Magnifying Glass** button |glass| is modal. Hovering the cursor over the button displays a pop-up containing two sliders that control the magnification level and size of a virtual magnifying glass. When selected, dragging the cursor with mouse button depressed opens a virtual magnifying glass that displays a magnified rendering of the underlying image in the region of the cursor.
 
 .. |glass| image:: OsimisGlass.png
-* The **Length Measurement** button |len| is modal. When selected, the distance in physical units between two points in an instance can be measured. To perform a measurement, click the mouse button once with the cursor over some point of interest, and then again over a second point of interest. Alternatively, depress and hold the mouse button while the cursor is over the first point of interest, then release the mouse button while the cursor is over the second point of interest. A line joining the two points and its length are displayed. The line will scale if the series is zoomed in or out.
-
-  A length measurement can be moved by clicking on it and dragging. To remove a length measurement, drag it or an endpoint outside of the extent of the between instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the measure outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the measure outside of the extent of the instance. 
- 
-  A length measurement is only visible on the instance on which it was made. There is currently no support for saving length measurements.
-
-.. |len| image:: OsimisLength.png
-* The **Angle Measurement** button |ang| is modal. When selected, the angle between features in an instance can be measured. To perform a measurement, click on a point of interest in an instance. A pair of lines are displayed. Drag the end points of the lines as needed to form the angle to be measured. The angle between the lines is displayed continuously as any endpoint is dragged.
-  
-  An angle measurement can be moved by clicking on one of the lines and dragging it while holding down the mouse button. To remove an angle measurement, drag it or an endpoint outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the measure outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the measure outside of the extent of the instance.
-  
-  An angle measurement is only visible on the instance on which it was made. There is currently no support for saving angle measurements.  
-
-.. |ang| image:: OsimisAngle.png
 * The **Pixel Probe** button |probe| is modal. When selected, clicking on a point in an instance displays a circle at the probe point, the X and Y location of the pixel relative to the top left corner of the instance, and the intensity or color of the selected pixel. The value of color instance pixels is specified in RGB coordinates. For monochrome instances, both a Stored Pixel value (SP) and a Modality Pixel value (MO) are displayed. The MO values is calculated as ``SP * RescaleSlope + RescaleIntercept``, where RescaleSlope and RescaleIntercept are DICOM values of the instance. 
 
   A pixel probe can be moved by clicking on the probe indicator and dragging it while holding down the mouse button. To remove a pixel probe, drag it outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the measure outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the measure outside of the extent of the instance.
