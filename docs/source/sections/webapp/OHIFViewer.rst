@@ -17,32 +17,19 @@ _________________
 
 Clicking on a Study Instance UID in the table opens an OHIF Viewer in a new tab: 
 
-.. image:: OsimisInitialDisplay.png
+.. image:: OHIFInitialDisplay.png
 
-All the DICOM series which comprise the selected study are shown as thumbnail images in the Series Selection Panel. Note that it can take several seconds for these thumnails to appear. By default, the thumbnails are laid out in a grid pattern. This can be changed to a list format by clicking on the **List Display** button |list| above the thumbnails. The list format displays a description of each series. 
+Note that it can take several seconds for the study to load. 
 
-.. |list| image:: OsimisList.png
-.. image:: OsimisThumbnailList.png
+All the DICOM series which comprise the selected study are shown as thumbnail images in the Series Selection Panel. The Series Selection Panel can be hidden by clicking on the **Series** button |series|.
 
-Change back again to the grid pattern by clicking on the **Grid Display** button |grid|.
+.. |series| image:: OHIFSeries.png
 
-.. |grid| image:: OsimisGrid.png
+Each thumbnail image in the Series Selection Panel represents a series in the study.Text below each thumbnail is the Series Description as provided in the DICOM image files which comprise the series. The number next to the small **s** |s| to the lower right of a thumbnail, and below that is the number of instances |instances| in the series.
 
-To the lower right of each thumbnail is a small blue circle in which is displayed the number of DICOM instances which comprise the corresponding DICOM series. In addition, when your cursor hovers over a thumbnail, the viewer cycles through the instances comprising the series. (Note these low resolution images are loaded in the background and may not be available for cycling immediately after the viewer window opens.)
+By default, the Viewport displays the first series in the Series Selection Panel. To view a different series, drag its thumbnail into the viewport. The first instance ("slice") of the series is immediately displayed, and the remaining instances are loaded into the viewer. Instance loading progress is indicated by the blue line at the bottom of the corresponding thumbnail. Note that instance loading performance depends on your internet performance.
 
-To view a larger rendering of a series, drag its thumbnail into the viewport. The first instance of the series is immediately displayed. 
-
-.. image:: OsimisSingleVP.png
-
-At the same time, at the bottom of the viewport you will notice a grid comprised of a series of rectangles corresponding to the instances in the series. The color of the tabs indicates the following:
-
-* Black: The corresponsing instance is not yet avialable for viewing
-* Red: A reduced resolution image of the instance is available for viewing
-* Green: The full resolution image of the instance is available for viewing
-
-Typically, the viewer loads reduced resolution images for all series as quickly as possible. It loads full resolution images only when a series is dragged into the viewport.
-
-When instance images have been loaded, you can scroll through the instances using your mouse's thumbwheel or equvalent. As you scroll, the grid at the bottom of the screen highlights the instance currently being displayed. Clicking on a rectangle in the grid causes the corresponding instance to be displayed. The **Play Controls** |play| in the lower left corner of the main window enable you to single step forward or back through the series, and to cycle throught series repeatedly. A frame rate slider pops up when you hover over the play button. 
+As instance are loaded, you can scroll through the instances using your mouse's thumbwheel or equvalent. As you scroll, the slider on the right side of the viewport indicates the the instance currently being displayed. You can also navigate through the series by "grabbing" the slider with your mouse, or by clicking within in the slider area. Clicking on a rectangle in the grid causes the corresponding instance to be displayed. The **Play Controls** |play| in the lower left corner of the main window enable you to single step forward or back through the series, and to cycle throught series repeatedly. A frame rate slider pops up when you hover over the play button. 
 
 .. |play| image:: OsimisPlay.png
 
