@@ -34,6 +34,39 @@ By default, the Viewport displays the first series in the Series Selection Panel
 
 As instance are loaded, you can scroll through the instances using your mouse's thumbwheel or equvalent. As you scroll, the slider on the right side of the viewport indicates the the instance currently being displayed. You can also navigate through the series by "grabbing" the slider with your mouse, or by clicking within the slider area. 
 
+Viewport Metadata
+_________________
+A viewport displays metadata and display data for the series currently displayed. In the upper left are the following DICOM values:
+
+* PatientName
+
+* PatientID. 
+
+Note that the PatientName and PatientID are always the same in TCGA DICOM files. In the lower left are the DICOM:
+
+* SeriesNumber 
+
+* InstanceNumber of the instance currently displayed, and the number of instances in the series
+
+* Rows and Columns (image size in pixels)
+
+* SliceLocation and SliceThickness
+
+* SeriesDescription
+
+In the upper right are the DICOM:
+
+* StudyDescription
+
+* StudyDate
+
+In the lower right are the:
+
+* Current zoom level. 
+
+* The type of compression applied to the image
+
+* The current WindowWidth (W) and WindowCenter(L) applied to images in this viewport. (See **ROI Window** below for an explanation of these values. 
 
 A set of buttons above the viewport provides a range of viewing functions. 
 
@@ -42,10 +75,12 @@ A set of buttons above the viewport provides a range of viewing functions.
 
 Viewing Functions
 _________________
-The **Layout** button |layout| controls subdividing the viewport for the simultaneous display of one, two or four series. Drag a series into any of the subviewports to display it. Clicking in a subviewport gives it focus for mousewheel and cursor drag operations.
+The **Layout** button |layout| controls subdividing the viewport for the simultaneous display of up to sixteen series. Drag a series into any of the subviewports to display it. The border surrounding a thumbnail that is being displayed in the viewport area is emboldened. Clicking in a subviewport gives it focus for mousewheel and cursor drag operations; the border surrounding such a subviewport changes color to indicate which subviewport has focus.
 
 .. |layout| image:: OHIFLayout.png
 .. image:: OHIFMultiVP.png
+
+When multiple series are displayed, and as you scroll through a series in one subviewport, lines in other subviewports of series are drawn to show the corresponding location.
 
 Of the remaining buttons, some are modal, changing the effect of the cursor drag function. A blue line underscores the currently selected mode. Other buttons immediately perform some operation on the subviewport that has focus.
 
