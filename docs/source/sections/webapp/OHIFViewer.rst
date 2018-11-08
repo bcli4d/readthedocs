@@ -25,14 +25,14 @@ All the DICOM series which comprise the selected study are shown as thumbnail im
 
 .. |series| image:: OHIFSeries.png
 
-Each thumbnail image in the Series Selection Panel represents a series in the study.Text below each thumbnail is the Series Description as provided in the DICOM image files which comprise the series. The number next to the small **s** |s| to the lower right of a thumbnail, and below that is the number of instances |instances| in the series.
+Each thumbnail image in the Series Selection Panel represents a series in the study. Text below each thumbnail is the Series Description as found in the DICOM image files which comprise the series. The other data below each thumbnail are the series number within the study |s|, and the number of instances |count| in the series.
+
+.. |s| image:: OHIFSeriesNumber.png
+.. |count| image:: OHIFImageCount.png
 
 By default, the Viewport displays the first series in the Series Selection Panel. To view a different series, drag its thumbnail into the viewport. The first instance ("slice") of the series is immediately displayed, and the remaining instances are loaded into the viewer. Instance loading progress is indicated by the blue line at the bottom of the corresponding thumbnail. Note that instance loading performance depends on your internet performance.
 
-As instance are loaded, you can scroll through the instances using your mouse's thumbwheel or equvalent. As you scroll, the slider on the right side of the viewport indicates the the instance currently being displayed. You can also navigate through the series by "grabbing" the slider with your mouse, or by clicking within in the slider area. Clicking on a rectangle in the grid causes the corresponding instance to be displayed. The **Play Controls** |play| in the lower left corner of the main window enable you to single step forward or back through the series, and to cycle throught series repeatedly. A frame rate slider pops up when you hover over the play button. 
-
-.. |play| image:: OsimisPlay.png
-
+As instance are loaded, you can scroll through the instances using your mouse's thumbwheel or equvalent. As you scroll, the slider on the right side of the viewport indicates the the instance currently being displayed. You can also navigate through the series by "grabbing" the slider with your mouse, or by clicking within the slider area. 
 Viewing Functions
 _________________
 
