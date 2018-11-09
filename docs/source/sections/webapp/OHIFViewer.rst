@@ -190,8 +190,10 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 .. |hflip| image:: OHIFFlipHorizontally.png
 * The **Flip V** button |vflip| immediately performs a flip about the X axis of the image in the (sub)viewport that has focus.
 
-.. |vflip| image:: OsimisFlipVertically.png
+.. |vflip| image:: OHIFFlipVertically.png
 * The **Clear** button |clear| immediately clears all annotations from the currently display instance of the (sub)viewport having focus.
+
+.. |clear| image:: OHIFClear.png
 
 
   
