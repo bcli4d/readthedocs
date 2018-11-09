@@ -115,8 +115,7 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
  
   An annotation is only visible on the instance on which it was made. There is currently no support for saving annotations.
 
-.. |len| image:: OHIFAnnotate.png
-.. |pan| image:: OHIFPan.png
+.. |anno| image:: OHIFAnnotate.png
 * The **Angle** button |ang| is modal. When selected, the angle between features in an instance can be measured. To perform a measurement, click on a three points of interest in an instance. A pair of lines are displayed from the first to the send point and from the second point to the third. The magnitude, in degrees, of the angle between the two lines also displayed.
   
   An angle measurement can be moved by clicking on one of the lines and dragging it while holding down the mouse button. Any of the end points of the measure can also be moved.
