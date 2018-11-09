@@ -139,15 +139,11 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 .. |play| image:: OHIFPlay.png
 .. |stop| image:: OHIFStop.png
 
-* The **CINE** button |cine| pops up a window that provides comprehensive control over series scrolling.
+* The **CINE** button |cine| pops up a window that provides comprehensive control over series scrolling. The controller duplicates the functionality of the separate **Play**, **Next**, and **Previous** buttons, and also offers single step contols as wells as controls to jump to the first or last instance in a series. Finally, a slider allows controlling the frame rate of the Play function.
 
 .. |cine| image:: OHIFCine.png
-
-  The controller duplicates the functionality of the separate **Play**, **Next**, and **Previous** buttons, and also offers single step contols as wells as controls to jump to the first or last instance in a series. Finally, a slider allows controlling the frame rate of the Play function.
-
 .. image:: OHIFCineController.png
   :align: center
-
 * The **More** button |more| pops up a tool bar of the following additional view functions:
 
 .. |more| image:: OHIFMore.png
