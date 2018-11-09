@@ -143,35 +143,39 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 .. image:: OHIFCineController.png
  The controller duplicates the functionality of the separate **Play**, **Next**, and **Previous** buttons, and also offers single step contols as wells as controls to jump to the first or last instance in a series. Finally, a slider allows controlling the frame rate of the Play function.
 
-The **More** button |more| pops up a tool bar of additional view functions.
+* The **More** button |more| pops up a tool bar of additional view functions.
 
 .. |more| image:: OHIFMore.png
-The **Crosshairs** button |crosshairs| function is currently not available.
+* The **Crosshairs** button |crosshairs| function is currently not available.
 
 .. |crosshairs| image:: OHIFCrosshairs.png
-The **Magnify** button |magnify| is modal. When selected, dragging the cursor with mouse button depressed opens a virtual magnifying glass that displays a magnified rendering of the underlying image in the region of the cursor.
+* The **Magnify** button |magnify| is modal. When selected, dragging the cursor with mouse button depressed opens a virtual magnifying glass that displays a magnified rendering of the underlying image in the region of the cursor.
 
 .. |glass| image:: OHIFMagnify.png
-The **ROI** button |roi| is model. When selected, dragging the cursor with the mouse button depressed, or clicking on two locations in a (sub)viewport defines a rectangle. The intensities of all pixels in the subviewport are scaled and offest so the range of pixel intensities inside the rectangle are mapped to the full range of the display.
+* The **ROI** button |roi| is model. When selected, dragging the cursor with the mouse button depressed, or clicking on two locations in a (sub)viewport defines a rectangle. The intensities of all pixels in the subviewport are scaled and offest so the range of pixel intensities inside the rectangle are mapped to the full range of the display.
 
 .. |roi| image:: OHIFROI.png
-* The * Probe** button |probe| is modal. When selected and the mouse button is depressed, the X and Y pixel location of the tip of the cursor is displayed, along with the intensity or color of the selected pixel. The value of color instance pixels is specified in RGB coordinates. For monochrome instances, both a Stored Pixel value (SP) and a Modality Pixel value (MO) are displayed. The MO value is calculated as ``SP * RescaleSlope + RescaleIntercept``, where RescaleSlope and RescaleIntercept are DICOM values obtained from DICOM instance file. 
+* The **Probe** button |probe| is modal. When selected and the mouse button is depressed, the X and Y pixel location of the tip of the cursor is displayed, along with the intensity or color of the selected pixel. The value of color instance pixels is specified in RGB coordinates. For monochrome instances, both a Stored Pixel value (SP) and a Modality Pixel value (MO) are displayed. The MO value is calculated as ``SP * RescaleSlope + RescaleIntercept``, where RescaleSlope and RescaleIntercept are DICOM values obtained from DICOM instance file. 
 
 .. |probe| image:: OHIFProbe.png
-* The **Elliptical ROI** button |eROI| is modal. When selected, click on an instance and drag either of the small circles to configure an elliptical region of interest. The area, in pixels, of the ellipse is displayed near the ellipse. On monotone instances, the mean and standard deviation of the intensities of the pixels within the ellipse are also displayed. 
+* The **Elliptse** button |ellipse| is modal. When selected, dragging the cursor with the mouse button depressed, or clicking on two locations in a (sub)viewport defines an elliptical region of interest. Ellipse metadata is also displayed. This includes the ellipse area in pixels. On monotone instances, the mean and standard deviation of the intensities of the pixels within the ellipse are also displayed. 
   
-  An ellipse can be moved by clicking on its border and dragging it while holding down the mouse button. To remove an elliptical ROI, drag the ellipse or one of its control points outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the ROI outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the ROI outside of the extent of the instance.
+  An ellipse can be moved by clicking on its border and dragging it while holding down the mouse button. The ellipse metadata can be moved separately from the ellipse by dragging it. An ellipse can be resized by dragging one of the small circles that control the size and shape of the ellipse.
+  
+  To remove an ellipse, drag the ellipse or one of its control points outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the ellipse outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the ellipse outside of the extent of the instance.
 
   An elliptical ROI is only visible on the instance on which it was made. There is currently no support for saving elliptical ROIs.
   
-.. |eROI| image:: OsimisEllipticalROI.png
-* The **Rectangle ROI** button |rROI| is modal. When selected, click on an instance and drag either of the small circles to configure a rectangular region of interest. The area, in pixels, of the rectangle is displayed near the rectangle. On monotone instances, the mean and standard deviation of the intensities of the pixels within the rectangle are also displayed. 
+.. |eROI| image:: OHIFEllipse.png
+* The **Rectangle** button |rectangle| is modal. When selected, dragging the cursor with the mouse button depressed, or clicking on two locations in a (sub)viewport defines an rectangular region of interest. Rectangle metadata is also displayed. This includes the rectangle area in pixels. On monotone instances, the mean and standard deviation of the intensities of the pixels within the rectangle are also displayed. 
   
-  A rectangle can be moved by clicking on its border and dragging it while holding down the mouse button. To remove a rectangular ROI, drag the rectange or one of its control points outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the ROI outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the ROI outside of the extent of the instance.
+  A rectangle can be moved by clicking on its border and dragging it while holding down the mouse button. The rectangle metadata can be moved separately from the rectangle by dragging it. A rectangle can be resized by dragging one of the small circles that control the size and shape of the ellipse.
+  
+  To remove a rectangle, drag the rectangle or one of its control points outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the rectangle outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the rectangle outside of the extent of the instance.
 
-  A rectangular ROI is only visible on the instance on which it was made. There is currently no support for saving rectangular ROIs.
+  An rectangular ROI is only visible on the instance on which it was made. There is currently no support for saving rectangular ROIs.
   
-.. |rROI| image:: OsimisRectangleROI.png
+.. |rectangle| image:: OHIFRectangle.png
 * The **Rotate Left** button |left| immediately performs a ninety degree left rotation of the image in the (sub)viewport that has focus.
 
 .. |left| image:: OsimisRotateLeft.png
