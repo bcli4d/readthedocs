@@ -158,7 +158,7 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 * The **Probe** button |probe| is modal. When selected and the mouse button is depressed, the X and Y pixel location of the tip of the cursor is displayed, along with the intensity or color of the selected pixel. The value of color instance pixels is specified in RGB coordinates. For monochrome instances, both a Stored Pixel value (SP) and a Modality Pixel value (MO) are displayed. The MO value is calculated as ``SP * RescaleSlope + RescaleIntercept``, where RescaleSlope and RescaleIntercept are DICOM values obtained from DICOM instance file. 
 
 .. |probe| image:: OHIFProbe.png
-* The **Elliptse** button |ellipse| is modal. When selected, dragging the cursor with the mouse button depressed, or clicking on two locations in a (sub)viewport defines an elliptical region of interest. Ellipse metadata is also displayed. This includes the ellipse area in pixels. On monotone instances, the mean and standard deviation of the intensities of the pixels within the ellipse are also displayed. 
+* The **Ellipse** button |ellipse| is modal. When selected, dragging the cursor with the mouse button depressed, or clicking on two locations in a (sub)viewport defines an elliptical region of interest. Ellipse metadata is also displayed. This includes the ellipse area in pixels. On monotone instances, the mean and standard deviation of the intensities of the pixels within the ellipse are also displayed. 
   
   An ellipse can be moved by clicking on its border and dragging it while holding down the mouse button. The ellipse metadata can be moved separately from the ellipse by dragging it. An ellipse can be resized by dragging one of the small circles that control the size and shape of the ellipse.
   
@@ -166,7 +166,7 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 
   An elliptical ROI is only visible on the instance on which it was made. There is currently no support for saving elliptical ROIs.
   
-.. |eROI| image:: OHIFEllipse.png
+.. |ellipse| image:: OHIFEllipse.png
 * The **Rectangle** button |rectangle| is modal. When selected, dragging the cursor with the mouse button depressed, or clicking on two locations in a (sub)viewport defines an rectangular region of interest. Rectangle metadata is also displayed. This includes the rectangle area in pixels. On monotone instances, the mean and standard deviation of the intensities of the pixels within the rectangle are also displayed. 
   
   A rectangle can be moved by clicking on its border and dragging it while holding down the mouse button. The rectangle metadata can be moved separately from the rectangle by dragging it. A rectangle can be resized by dragging one of the small circles that control the size and shape of the ellipse.
@@ -176,19 +176,23 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
   An rectangular ROI is only visible on the instance on which it was made. There is currently no support for saving rectangular ROIs.
   
 .. |rectangle| image:: OHIFRectangle.png
-* The **Rotate Left** button |left| immediately performs a ninety degree left rotation of the image in the (sub)viewport that has focus.
+* The **Download** button |down| pops up a control panel through which the currently selected (sub)viewport can be downloaded to the local host. The file name of the resulting files, file type (png or jpeg), and size in pixels can be specified through the control panel, as well as whether to show annotations.
 
-.. |left| image:: OsimisRotateLeft.png
+.. |down| image:: OHIFDownload.png
+image:: OHIFDownloadControlPanel.png
+* The **Invert** button |invert| immediately inverts the colors of the series in the (sub)viewport having focus.
+
+.. |invert| image:: OHIFInvert.png
 * The **Rotate Right** button |right| immediately performs a ninety degree right rotation of the image in the (sub)viewport that has focus.
 
-.. |right| image:: OsimisRotateRight.png
-* The **Flip Horizontally** button |hflip| immediately performs a flip about the Y axis of the image in the (sub)viewport that has focus.
+.. |right| image:: OHIFRotateRight.png
+* The **Flip H** button |hflip| immediately performs a flip about the Y axis of the image in the (sub)viewport that has focus.
 
-.. |hflip| image:: OsimisFlipHorizontally.png
-* The **Flip Vertically** button |vflip| immediately performs a flip about the X axis of the image in the (sub)viewport that has focus.
+.. |hflip| image:: OHIFFlipHorizontally.png
+* The **Flip V** button |vflip| immediately performs a flip about the X axis of the image in the (sub)viewport that has focus.
 
 .. |vflip| image:: OsimisFlipVertically.png
-
+* The **Clear** button |clear| immediately clears all annotations from the currently display instance of the (sub)viewport having focus.
 
 
   
