@@ -139,10 +139,12 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 * The **CINE** button |cine| immediately pops up a window that provides comprehensive control over series scrolling.
 
 .. |cine| image:: OHIFCine.png
+
   The controller duplicates the functionality of the separate **Play**, **Next**, and **Previous** buttons, and also offers single step contols as wells as controls to jump to the first or last instance in a series. Finally, a slider allows controlling the frame rate of the Play function.
 
 .. image:: OHIFCineController.png
   :align: center
+
 * The **More** button |more| pops up a tool bar of additional view functions.
 
 .. |more| image:: OHIFMore.png
@@ -151,8 +153,8 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 .. |crosshairs| image:: OHIFCrosshairs.png
 * The **Magnify** button |magnify| is modal. When selected, dragging the cursor with mouse button depressed opens a virtual magnifying glass that displays a magnified rendering of the underlying image in the region of the cursor.
 
-.. |glass| image:: OHIFMagnify.png
-* The **ROI** button |roi| is model. When selected, dragging the cursor with the mouse button depressed, or clicking on two locations in a (sub)viewport defines a rectangle. The intensities of all pixels in the subviewport are scaled and offest so the range of pixel intensities inside the rectangle are mapped to the full range of the display.
+.. |magnify| image:: OHIFMagnify.png
+* The **ROI Window** button |roi| is model. When selected, dragging the cursor with the mouse button depressed, or clicking on two locations in a (sub)viewport defines a rectangle. The intensities of all pixels in the subviewport are scaled and offest so the range of pixel intensities inside the rectangle are mapped to the full range of the display.
 
 .. |roi| image:: OHIFROI.png
 * The **Probe** button |probe| is modal. When selected and the mouse button is depressed, the X and Y pixel location of the tip of the cursor is displayed, along with the intensity or color of the selected pixel. The value of color instance pixels is specified in RGB coordinates. For monochrome instances, both a Stored Pixel value (SP) and a Modality Pixel value (MO) are displayed. The MO value is calculated as ``SP * RescaleSlope + RescaleIntercept``, where RescaleSlope and RescaleIntercept are DICOM values obtained from DICOM instance file. 
@@ -180,6 +182,7 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 
 .. |down| image:: OHIFDownload.png
 .. image:: OHIFDownloadControlPanel.png
+  :align: center
 * The **Invert** button |invert| immediately inverts the colors of the series in the (sub)viewport having focus.
 
 .. |invert| image:: OHIFInvert.png
