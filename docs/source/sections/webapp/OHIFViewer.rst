@@ -6,9 +6,9 @@ Radiology images are viewed in an open source viewer from the `Open Health Imagi
 .. _dcm4chee: https://www.dcm4che.org/
 
 
-The **Radiology Images** tab of the ISB-CGC web application `File Browser page`_ presents a table of DICOM studies associated with patients in some cohort.
+The **Radiology Images** tab of the ISB-CGC web application `File Browser`_ page presents a table of DICOM studies associated with patients in some cohort.
 
-.. _File Browser page: https://isb-cancer-genomics-cloud.readthedocs.io/en/latest/sections/webapp/Saved-Cohorts.html#view-file-browser-page
+.. _File Browser: https://isb-cancer-genomics-cloud.readthedocs.io/en/latest/sections/webapp/Saved-Cohorts.html#view-file-browser-page
 
 .. image:: OHIFPick.png
 
@@ -21,11 +21,11 @@ Clicking on a Study Instance UID in the table opens an OHIF Viewer in a new tab:
 
 Note that it can take several seconds for the study to load. 
 
-All the DICOM series which comprise the selected study are shown as thumbnail images in the Series Selection Panel. The Series Selection Panel can be hidden by clicking on the **Series** button |series|.
+All the DICOM series which comprise the selected study are shown as thumbnail images in the Series Selection Panel. The Series Selection Panel can be hidden/unhidden by clicking on the **Series** button |series|.
 
 .. |series| image:: OHIFSeries.png
 
-Each thumbnail image in the Series Selection Panel represents a series in the study. Text below each thumbnail is the Series Description as found in the DICOM image files which comprise the series. The other data below each thumbnail are the series number within the study |s|, and the number of instances |count| in the series.
+Each thumbnail image in the Series Selection Panel represents a DICOM Series in the selected study. Text below each thumbnail is the Series Description as found in the DICOM image files which comprise the series. The other data below each thumbnail are the series number within the study |s|, and the number of instances |count| in the series.
 
 .. |s| image:: OHIFSeriesNumber.png
 .. |count| image:: OHIFImageCount.png
@@ -36,13 +36,15 @@ As instance are loaded, you can scroll through the instances using your mouse's 
 
 Viewport Metadata
 _________________
-A viewport displays metadata and display data for the series currently displayed. In the upper left are the following DICOM values:
+A viewport displays metadata and display data for the series currently displayed. These DICOM values are displayed in the upper left corner:
 
 * PatientName
 
-* PatientID. 
+* PatientID
 
-Note that the PatientName and PatientID are always the same in TCGA DICOM files. In the lower left are the DICOM:
+Note that the PatientName and PatientID are always the same in TCGA DICOM files. 
+
+These DICOM values are displayed in the lower left corner:
 
 * SeriesNumber 
 
@@ -54,7 +56,7 @@ Note that the PatientName and PatientID are always the same in TCGA DICOM files.
 
 * SeriesDescription
 
-In the upper right are the DICOM:
+These DICOM values are displayed in the upper right corner:
 
 * StudyDescription
 
@@ -75,22 +77,22 @@ A set of buttons above the viewport provides a range of viewing functions.
 
 Viewing Functions
 _________________
-The **Layout** button |layout| controls subdividing the viewport for the simultaneous display of up to sixteen series. Drag a series into any of the subviewports to display it. The border surrounding a thumbnail that is being displayed in the viewport area is emboldened. Clicking in a subviewport gives it focus for mousewheel and cursor drag operations; the border surrounding such a subviewport changes color to indicate which subviewport has focus.
+The **Layout** button |layout| controls subdividing the viewport into multiple subviewports for the simultaneous display of up to sixteen series. Drag a series into any of the subviewports to display it. The border surrounding a thumbnail that is being displayed in the viewport area is emboldened. Clicking in a subviewport gives it focus for mousewheel and cursor drag operations; the border surrounding such a subviewport changes color to indicate which subviewport has focus.
 
 .. |layout| image:: OHIFLayout.png
 .. image:: OHIFMultiVP.png
 
-When multiple series are displayed, and as you scroll through a series in one subviewport, lines in other subviewports move to show the corresponding location.
+When multiple series are displayed, and as you scroll through a series in one subviewport, lines in other subviewports move to show the corresponding instance location.
 
 Of the remaining buttons, some are modal, changing the effect of the cursor drag operation (holding the mouse button down while moving the cursor). The color of the currently selected modal function's icon changes to indicate it has been selected. Other buttons immediately perform some operation on the subviewport that has focus.
 
-* The **Stack Scroll** button |scroll| is modal. When selected, cursor dragging the cursor up or down with mouse button depressed scrolls through the images in the (sub)viewport having focus, similar to using your mouse's scroll wheel.
+* The **Stack Scroll** button |scroll| is modal. When selected, dragging the cursor up or down with mouse button depressed scrolls through the images in the (sub)viewport having focus, similar to using your mouse's scroll wheel.
 
 .. |scroll| image:: OHIFScrollStack.png
-* The **Zoom** button |zoom| is modal. When selected, dragging the cursor with mouse button depressed expands or contracts the series in the (sub)viewport having focus. Expansion/contraction is around the cursor position at which dragging begins.
+* The **Zoom** button |zoom| is modal. When selected, dragging the cursor with mouse button depressed expands or contracts the series in the (sub)viewport having focus. Expansion/contraction is around the center of the (sub)viewport.
 
 .. |zoom| image:: OHIFZoom.png
-* The **Levels** button |presets| is modal. When selected, dragging the cursor with mouse button depressed right or left decreases or increases the current Window Width. Dragging the cursor with mouse button depressed up or down increases or decreases the current Window Center. The Window Width and Window Center value pair specify a linear conversion from stored pixel values to displayed pixel values. See here_ for further information on Window Center and Window Width. DICOM instances generally include WW,WC value pairs and these are used by default.
+* The **Levels** button |presets| is modal. When selected, dragging the cursor right or left with mouse button depressed decreases or increases the current Window Width. Dragging the cursor up or down with mouse button depressed increases or decreases the current Window Center. The Window Width and Window Center value pair specify a linear conversion from stored pixel values to displayed pixel values. See here_ for further information on Window Center and Window Width. DICOM instances generally include WW,WC value pairs and these are used by default.
 
 .. _here: http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.11.2.1.2
 
@@ -100,29 +102,29 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 .. |pan| image:: OHIFPan.png
 * The **Length** button |len| is modal. When selected, the distance in physical units between two points in the current instance can be measured. To perform a measurement, click the mouse button once with the cursor over some point of interest, and then again over a second point of interest. Alternatively, depress and hold the mouse button while the cursor is over the first point of interest, then release the mouse button while the cursor is over the second point of interest. A line joining the two points and its length are displayed. The line will scale if the series is zoomed in or out. 
 
-  A length measurement can be moved, while in any mode, by clicking on and dragging it. You can also "grab" a line endpoint and drag it to a different location.
+  A length measurement can be moved, while in any mode, by clicking on and dragging it. You can also "grab" a line endpoint and drag it to a different location. The length text can be separately moved.
   
   To remove a length measurement, drag it or an endpoint outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the measure outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the measure outside of the extent of the instance. 
  
-  A length measurement is only visible on the instance on which it was made. There is currently no support for saving length measurements.
+  A length measurement is only visible on the instance on which it was made. There is currently no support for saving length measurements other than by downloading a snapshot of the (sub)viewport (see **Download** below).
 
 .. |len| image:: OHIFLength.png
-* The **Annotate** button |anno| is modal. When selected, a point in the current instance can be measured. To perform an annotation, click the mouse button once with the cursor over some point of interest, and then again over a second location. Alternatively, depress and hold the mouse button while the cursor is over the first point of interest, then release the mouse button while the cursor is over a second location. An arrow joining the two points and with its head at the point of interest is displayed, and a pop-up window appears into which some text annotation can be entered. The arrow will scale if the series is zoomed in or out. 
+* The **Annotate** button |anno| is modal. When selected, a point in the current instance can be annotated with text. To perform an annotation, click the mouse button once with the cursor over some point of interest, and then again over a second location. Alternatively, depress and hold the mouse button while the cursor is over the first point of interest, then release the mouse button while the cursor is over a second location. An arrow joining the two points and with its head at the point of interest is displayed, and a pop-up window appears into which some text annotation can be entered. The arrow will scale if the series is zoomed in or out. 
 
-  An annotation can be moved, while in any mode, by clicking on and dragging it. You can also "grab" an annotation endpoint and drag it to a different location.
+  An annotation can be moved, while in any mode, by clicking on and dragging it. You can also "grab" an annotation endpoint and drag it to a different location. The annotation text can be separately moved. 
   
   To remove an annotation, drag it or an endpoint outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the annotation outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the annotation outside of the extent of the instance. 
  
-  An annotation is only visible on the instance on which it was made. There is currently no support for saving annotations.
+  An annotation is only visible on the instance on which it was made. There is currently no support for saving annotations other than by downloading a snapshot of the (sub)viewport (see **Download** below).
 
 .. |anno| image:: OHIFAnnotate.png
-* The **Angle** button |ang| is modal. When selected, the angle between features in an instance can be measured. To perform a measurement, click on a three points of interest in an instance. A pair of lines are displayed from the first to the send point and from the second point to the third. The magnitude, in degrees, of the angle between the two lines also displayed.
+* The **Angle** button |ang| is modal. When selected, the angle between features in an instance can be measured. To perform a measurement, click on three points of interest in an instance. A pair of lines are displayed from the first to the send point and from the second point to the third. The magnitude, in degrees, of the angle between the two lines also displayed.
   
-  An angle measurement can be moved by clicking on one of the lines and dragging it while holding down the mouse button. Any of the end points of the measure can also be moved.
+  An angle measurement can be moved by clicking on one of the lines and dragging it while holding down the mouse button. Any of the end points of the measure can also be moved. The angle text can be separately moved.
   
   To remove an angle measurement, drag it or an endpoint outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the measure outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the measure outside of the extent of the instance.
   
-  An angle measurement is only visible on the instance on which it was made. There is currently no support for saving angle measurements.  
+  An angle measurement is only visible on the instance on which it was made. There is currently no support for saving angle measurements other than by downloading a snapshot of the (sub)viewport (see **Download** below).  
 
 .. |ang| image:: OHIFAngle.png
 * The **Reset** button |reset| immediately resets the zoom level, pan location, window width and window center of the (sub)viewport having focus to default values.
@@ -132,11 +134,11 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 
 .. |previous| image:: OHIFPrevious.png
 .. |next| image:: OHIFNext.png
-* The **Play** button |play| immediately initates sequential scrolling of the instances in the (sub)viewport having focus, and the **Play** changes to **Stop** |stop|. The state of the button represents the state of the (sub)viewport having focus. Thus changing the (sub)viewport having focus causes the Play buttion icon to change accordingly.
+* The **Play** button |play| immediately initiates sequential scrolling of the instances in the (sub)viewport having focus, and the **Play** changes to **Stop** |stop|. The state of the button represents the state of the (sub)viewport having focus. Thus changing the (sub)viewport having focus causes the Play buttion icon to change accordingly.
 
 .. |play| image:: OHIFPlay.png
 .. |stop| image:: OHIFStop.png
-* The **CINE** button |cine| immediately pops up a window that provides comprehensive control over series scrolling.
+* The **CINE** button |cine| pops up a window that provides comprehensive control over series scrolling.
 
 .. |cine| image:: OHIFCine.png
 
@@ -145,7 +147,7 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 .. image:: OHIFCineController.png
   :align: center
 
-* The **More** button |more| pops up a tool bar of additional view functions.
+* The **More** button |more| pops up a tool bar of the following additional view functions:
 
 .. |more| image:: OHIFMore.png
 * The **Crosshairs** button |crosshairs| function is currently not available.
@@ -166,7 +168,7 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
   
   To remove an ellipse, drag the ellipse or one of its control points outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the ellipse outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the ellipse outside of the extent of the instance.
 
-  An elliptical ROI is only visible on the instance on which it was made. There is currently no support for saving elliptical ROIs.
+  An elliptical ROI is only visible on the instance on which it was made. There is currently no support for saving elliptical ROIs other than by downloading a snapshot of the (sub)viewport (see **Download** below).
   
 .. |ellipse| image:: OHIFEllipse.png
 * The **Rectangle** button |rectangle| is modal. When selected, dragging the cursor with the mouse button depressed, or clicking on two locations in a (sub)viewport defines an rectangular region of interest. Rectangle metadata is also displayed. This includes the rectangle area in pixels. On monotone instances, the mean and standard deviation of the intensities of the pixels within the rectangle are also displayed. 
@@ -175,7 +177,7 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
   
   To remove a rectangle, drag the rectangle or one of its control points outside of the extent of the instance. Note that if you have "zoomed in" on an instance, its extent may be much larger than the (sub)viewport in which it is displayed. This can make it difficult to drag the rectangle outside of the extent of the instance. In this case it may be necessary to "zoom out" in order to be able to drag the rectangle outside of the extent of the instance.
 
-  An rectangular ROI is only visible on the instance on which it was made. There is currently no support for saving rectangular ROIs.
+  An rectangular ROI is only visible on the instance on which it was made. There is currently no support for saving rectangular ROIs other than by downloading a snapshot of the (sub)viewport (see **Download** below).
   
 .. |rectangle| image:: OHIFRectangle.png
 * The **Download** button |down| pops up a control panel through which the currently selected (sub)viewport can be downloaded to the local host. The file name of the resulting files, file type (png or jpeg), and size in pixels can be specified through the control panel, as well as whether to show annotations.
@@ -195,7 +197,7 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 * The **Flip V** button |vflip| immediately performs a flip about the X axis of the image in the (sub)viewport that has focus.
 
 .. |vflip| image:: OHIFFlipVertically.png
-* The **Clear** button |clear| immediately clears all annotations from the currently display instance of the (sub)viewport having focus.
+* The **Clear** button |clear| immediately clears all annotations from the currently displayed instance of the (sub)viewport having focus.
 
 .. |clear| image:: OHIFClear.png
 
