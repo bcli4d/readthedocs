@@ -138,6 +138,7 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 
 .. |play| image:: OHIFPlay.png
 .. |stop| image:: OHIFStop.png
+
 * The **CINE** button |cine| pops up a window that provides comprehensive control over series scrolling.
 
 .. |cine| image:: OHIFCine.png
