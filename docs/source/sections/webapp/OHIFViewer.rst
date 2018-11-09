@@ -179,7 +179,7 @@ Of the remaining buttons, some are modal, changing the effect of the cursor drag
 * The **Download** button |down| pops up a control panel through which the currently selected (sub)viewport can be downloaded to the local host. The file name of the resulting files, file type (png or jpeg), and size in pixels can be specified through the control panel, as well as whether to show annotations.
 
 .. |down| image:: OHIFDownload.png
-image:: OHIFDownloadControlPanel.png
+.. image:: OHIFDownloadControlPanel.png
 * The **Invert** button |invert| immediately inverts the colors of the series in the (sub)viewport having focus.
 
 .. |invert| image:: OHIFInvert.png
